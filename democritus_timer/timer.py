@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import os
 import sys
 
@@ -27,9 +25,8 @@ _timer_object = Timer()
 
 def timer_start(name: str = None) -> str:
     """Start a timer with the given name. Timers can be stopped with the `timer_stop` function."""
-    from dates_and_times import time_now
-    from strings import text_input_is_no
-    from uuids import uuid4
+    from democritus_dates import time_now
+    from democritus_uuids import uuid4
 
     # if there is no name given, use a generic name
     if name is None:
@@ -37,10 +34,8 @@ def timer_start(name: str = None) -> str:
 
     # if a timer with the given name already exists, ask the user if he/she would like to replace that timer
     if _timer_object.timers.get(name):
-        print(f'A timer with the name "{name}" already exists.')
-        # if the user does not want to replace the timer with the given name, return
-        if text_input_is_no('Would you like to start a new timer'):
-            return
+        message = f'A timer with the name "{name}" already exists. If you want to end it, use: `timer_stop("{name}")\ntimer_start("{name}")`.'
+        raise RuntimeError(message)
 
     # record the start time for the timer
     _timer_object.timers[name] = time_now()
@@ -49,7 +44,7 @@ def timer_start(name: str = None) -> str:
 
 def _get_time_difference(timer_time: int) -> float:
     """Get the difference between the given timer_time and the current time."""
-    from dates_and_times import time_now
+    from democritus_dates import time_now
 
     current_time = time_now()
     return current_time - timer_time
