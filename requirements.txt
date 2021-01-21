@@ -1,2 +1,3 @@
 democritus-uuids @ git+https://github.com/democritus-project/democritus-uuids.git#egg=democritus-uuids
 democritus-dates @ git+https://github.com/democritus-project/democritus-dates.git#egg=democritus-dates
+importlib-metadata; python_version < '3.8'
