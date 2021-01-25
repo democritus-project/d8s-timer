@@ -1,7 +1,4 @@
-import os
-import sys
-
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '.')))
+import functools
 
 
 class Timer(object):
@@ -69,3 +66,16 @@ def timer_stop(name: str) -> float:
     del _timer_object.timers[name]
 
     return time_difference
+
+
+def time_it(func):
+    """Return the time it takes func to execute."""
+
+    @functools.wraps(func)
+    def wrapper(*args, **kwargs):
+        timer_name = timer_start()
+        func(*args, **kwargs)
+        timer_time = timer_stop(timer_name)
+        return timer_time
+
+    return wrapper

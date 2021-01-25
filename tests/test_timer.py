@@ -2,7 +2,7 @@ import time
 
 import pytest
 
-from democritus_timer import timer_start, timer_stop, timer_get_time
+from democritus_timer import timer_start, timer_stop, timer_get_time, time_it
 
 
 def test_timer_get_time_1():
@@ -39,3 +39,15 @@ def test_named_timer_1():
 
     bar_elapsed_time = timer_stop('bar')
     assert 4 < bar_elapsed_time < 5
+
+
+@time_it
+def time_it_test_func():
+    import time
+
+    time.sleep(2)
+
+
+def test_time_it_1():
+    execution_time = time_it_test_func()
+    assert 2 < execution_time < 3
