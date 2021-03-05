@@ -2,7 +2,7 @@ import time
 
 import pytest
 
-from democritus_timer import timer_start, timer_stop, timer_get_time, time_it
+from democritus_timer import time_it, timer_get_time, timer_start, timer_stop
 
 
 def test_timer_get_time_1():
@@ -14,12 +14,26 @@ def test_timer_get_time_1():
     timer_stop(timer_name)
 
 
+def test_timer_get_time__invalid_name():
+    with pytest.raises(ValueError):
+        timer_get_time('foo')
+
+
 def test_generic_timer_1():
     timer_name = timer_start()
     time.sleep(2)
     elapsed_time = timer_stop(timer_name)
     assert elapsed_time > 2
     assert elapsed_time < 3
+
+
+def test_generic_timer__invalid_name():
+    timer_name = timer_start()
+
+    with pytest.raises(ValueError):
+        timer_stop('foo')
+
+    timer_stop(timer_name)
 
 
 def test_named_timer_1():

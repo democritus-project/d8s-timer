@@ -1,7 +1,12 @@
 import functools
 
+from democritus_dates import time_now
+from democritus_uuids import uuid4
 
-class Timer(object):
+
+class Timer:
+    """Class to track timers."""
+
     def __init__(self):
         self.timers = {}
 
@@ -10,7 +15,8 @@ class Timer(object):
         if name not in self.timers:
             if print_errors:
                 print(
-                    f'There is no timer with the name "{name}". Use the `timer_start(\'{name}\')` function to start the timer.'
+                    f'There is no timer with the name "{name}". '
+                    + f'Use the `timer_start("{name}")` to start the timer with this name.'
                 )
             return False
         else:
@@ -22,16 +28,16 @@ _timer_object = Timer()
 
 def timer_start(name: str = None) -> str:
     """Start a timer with the given name. Timers can be stopped with the `timer_stop` function."""
-    from democritus_dates import time_now
-    from democritus_uuids import uuid4
-
     # if there is no name given, use a generic name
     if name is None:
         name = uuid4()
 
     # if a timer with the given name already exists, ask the user if he/she would like to replace that timer
     if _timer_object.timers.get(name):
-        message = f'A timer with the name "{name}" already exists. If you want to end it, use: `timer_stop("{name}")\ntimer_start("{name}")`.'
+        message = (
+            f'A timer with the name "{name}" already exists. '
+            + f'If you want to end it, use: `timer_stop("{name}")\ntimer_start("{name}")`.'
+        )
         raise RuntimeError(message)
 
     # record the start time for the timer
@@ -41,8 +47,6 @@ def timer_start(name: str = None) -> str:
 
 def _get_time_difference(timer_time: int) -> float:
     """Get the difference between the given timer_time and the current time."""
-    from democritus_dates import time_now
-
     current_time = time_now()
     return current_time - timer_time
 
@@ -50,7 +54,8 @@ def _get_time_difference(timer_time: int) -> float:
 def timer_get_time(name: str) -> float:
     """Get the current time for the timer with the given name."""
     if not _timer_object.has_timer(name, print_errors=True):
-        return
+        message = f'There is no timer with the name {name}'
+        raise ValueError(message)
 
     time_difference = _get_time_difference(_timer_object.timers[name])
     return time_difference
@@ -59,7 +64,8 @@ def timer_get_time(name: str) -> float:
 def timer_stop(name: str) -> float:
     """Stop a timer (you can start a timer with the `timer_start` function)."""
     if not _timer_object.has_timer(name, print_errors=True):
-        return
+        message = f'There is no timer with the name {name}'
+        raise ValueError(message)
 
     time_difference = _get_time_difference(_timer_object.timers[name])
     # remove the timer after it has been stopped
