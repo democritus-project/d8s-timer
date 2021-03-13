@@ -1,8 +1,8 @@
 # Democritus Timer
 
-[![PyPI](https://img.shields.io/pypi/v/democritus-timer.svg)](https://pypi.python.org/pypi/democritus-timer)
-[![Build Status](https://travis-ci.com/democritus-project/democritus-timer.svg?branch=main)](https://travis-ci.com/democritus-project/democritus-timer)
-[![codecov](https://codecov.io/gh/democritus-project/democritus-timer/branch/main/graph/badge.svg?token=V0WOIXRGMM)](https://codecov.io/gh/democritus-project/democritus-timer)
+[![PyPI](https://img.shields.io/pypi/v/d8s-timer.svg)](https://pypi.python.org/pypi/d8s-timer)
+[![Build Status](https://travis-ci.com/democritus-project/d8s-timer.svg?branch=main)](https://travis-ci.com/democritus-project/d8s-timer)
+[![codecov](https://codecov.io/gh/democritus-project/d8s-timer/branch/main/graph/badge.svg?token=V0WOIXRGMM)](https://codecov.io/gh/democritus-project/d8s-timer)
 
 Democritus functions<sup>[1]</sup> for working with timers.
 
