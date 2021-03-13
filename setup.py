@@ -12,13 +12,13 @@ with open('requirements_dev.txt') as requirements_dev_file:
     test_requirements = requirements_dev_file.read().splitlines()
 
 setup(
-    name='democritus_timer',
+    name='d8s_timer',
     description="Democritus functions for working with timers.",
     long_description=readme,
     long_description_content_type="text/markdown",
     author="Floyd Hightower",
     author_email='floyd.hightower27@gmail.com',
-    url='https://github.com/democritus-project/democritus-timer',
+    url='https://github.com/democritus-project/d8s-timer',
     use_scm_version=True,
     setup_requires=['setuptools_scm'],
     packages=find_packages(exclude=('tests')),

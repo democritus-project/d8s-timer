@@ -2,7 +2,7 @@ import time
 
 import pytest
 
-from democritus_timer import time_it, timer_get_time, timer_start, timer_stop
+from d8s_timer import time_it, timer_get_time, timer_start, timer_stop
 
 
 def test_timer_get_time_1():
