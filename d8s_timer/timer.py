@@ -1,7 +1,7 @@
 import functools
 
-from democritus_dates import time_now
-from democritus_uuids import uuid4
+from d8s_dates import time_now
+from d8s_uuids import uuid4
 
 
 class Timer:
