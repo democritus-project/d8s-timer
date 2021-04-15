@@ -14,9 +14,24 @@ Democritus functions<sup>[1]</sup> for working with timers.
 
 We use `d8s` as an abbreviation for `democritus` (you can read more about this [here](https://github.com/democritus-project/roadmap#what-is-d8s)).
 
-## Usage
+## Functions
 
-Coming soon...
+  - ```python
+    def timer_start(name: str = None) -> str:
+        """Start a timer with the given name. Timers can be stopped with the `timer_stop` function."""
+    ```
+  - ```python
+    def timer_get_time(name: str) -> float:
+        """Get the current time for the timer with the given name."""
+    ```
+  - ```python
+    def timer_stop(name: str) -> float:
+        """Stop a timer (you can start a timer with the `timer_start` function)."""
+    ```
+  - ```python
+    def time_it(func):
+        """Return the time it takes func to execute."""
+    ```
 
 ## Development
 
