@@ -6,7 +6,7 @@ from d8s_timer import time_it, timer_get_time, timer_start, timer_stop
 
 
 def test_timer_get_time_1():
-    timer_name = 'foo'
+    timer_name = "foo"
     timer_start(timer_name)
     time.sleep(2)
     current_time = timer_get_time(timer_name)
@@ -16,7 +16,7 @@ def test_timer_get_time_1():
 
 def test_timer_get_time__invalid_name():
     with pytest.raises(ValueError):
-        timer_get_time('foo')
+        timer_get_time("foo")
 
 
 def test_generic_timer_1():
@@ -31,7 +31,7 @@ def test_generic_timer__invalid_name():
     timer_name = timer_start()
 
     with pytest.raises(ValueError):
-        timer_stop('foo')
+        timer_stop("foo")
 
     timer_stop(timer_name)
 
@@ -42,7 +42,7 @@ def test_named_timer_1():
     with pytest.raises(RuntimeError):
         timer_start(timer_name)
 
-    timer_start('bar')
+    timer_start("bar")
 
     time.sleep(2)
 
@@ -51,7 +51,7 @@ def test_named_timer_1():
 
     time.sleep(2)
 
-    bar_elapsed_time = timer_stop('bar')
+    bar_elapsed_time = timer_stop("bar")
     assert 4 < bar_elapsed_time < 5
 
 

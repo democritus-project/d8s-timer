@@ -1,4 +1,5 @@
 import functools
+from typing import Optional
 
 from d8s_dates import time_now
 from d8s_uuids import uuid4
@@ -26,7 +27,7 @@ class Timer:
 _timer_object = Timer()
 
 
-def timer_start(name: str = None) -> str:
+def timer_start(name: Optional[str] = None) -> str:
     """Start a timer with the given name. Timers can be stopped with the `timer_stop` function."""
     # if there is no name given, use a generic name
     if name is None:
@@ -54,7 +55,7 @@ def _get_time_difference(timer_time: int) -> float:
 def timer_get_time(name: str) -> float:
     """Get the current time for the timer with the given name."""
     if not _timer_object.has_timer(name, print_errors=True):
-        message = f'There is no timer with the name {name}'
+        message = f"There is no timer with the name {name}"
         raise ValueError(message)
 
     time_difference = _get_time_difference(_timer_object.timers[name])
@@ -64,7 +65,7 @@ def timer_get_time(name: str) -> float:
 def timer_stop(name: str) -> float:
     """Stop a timer (you can start a timer with the `timer_start` function)."""
     if not _timer_object.has_timer(name, print_errors=True):
-        message = f'There is no timer with the name {name}'
+        message = f"There is no timer with the name {name}"
         raise ValueError(message)
 
     time_difference = _get_time_difference(_timer_object.timers[name])
