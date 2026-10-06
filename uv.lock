@@ -316,7 +316,7 @@ wheels = [
 
 [[package]]
 name = "d8s-dates"
-version = "0.7.0"
+version = "0.8.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "d8s-hypothesis" },
@@ -328,9 +328,9 @@ dependencies = [
     { name = "parsedatetime" },
     { name = "python-dateutil" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/94/48/21987b4a8ba32e46bbd60ab41110f8bb2d4c0442d8370d02f3b4ba588be2/d8s_dates-0.7.0.tar.gz", hash = "sha256:d0e2ff2b8a5bf8cb3d173f5d901a554ffd0196da72b42e6629f859bbe93f9a1e", size = 33993, upload-time = "2021-05-22T16:50:11.507Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/20/cc/1b53a13c0868d1bfde20acd8da76e1fe69cf414bf26a965ebfefdba67579/d8s_dates-0.8.0.tar.gz", hash = "sha256:0510a27c7d29070fdc8bc704d2d378f46e6e615dc53afba26263dce1b0cdb424", size = 118707, upload-time = "2026-07-01T12:04:55.357Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/65/03/b212336930d2a5457fa9a6681466e2c917520f1c8d1e5be97e4e8023b988/d8s_dates-0.7.0-py2.py3-none-any.whl", hash = "sha256:f36c430057a0024869bf4ed2cba3321df89f66c02bae3387d197e9a1a63a9df8", size = 28908, upload-time = "2021-05-22T16:50:10.086Z" },
+    { url = "https://files.pythonhosted.org/packages/70/81/174755712c1bf99b176731d80328e71289880a63fa6c89dd9d18085963f1/d8s_dates-0.8.0-py3-none-any.whl", hash = "sha256:8f9e3b73f4b92769d85cb950f835161a978db8b56f744229b4b1aa77fd32c5d9", size = 23941, upload-time = "2026-07-01T12:04:53.992Z" },
 ]
 
 [[package]]
